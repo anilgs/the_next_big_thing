@@ -1,3 +1,4 @@
+
 #!/bin/sh
 echo "*** Running container app specs"
 bundle exec rake db:migrate db:test:prepare
@@ -5,12 +6,21 @@ bundle exec rspec spec
 result=$?
 
 
+cd engines/news_signup
+echo "*** Running news_signup engine specs"
+bundle install
+bundle exec rake db:migrate app:db:test:prepare
+rspec spec
+result+=$?
+
+
+cd ../..
 cd engines/teaser
 echo "*** Running teaser engine specs"
 source "$HOME/.rvm/scripts/rvm"
 bundle install
 bundle exec rake db:migrate app:db:test:prepare
-bundle exec rspec spec/models spec/controllers
+bundle exec rspec spec/controllers
 result+=$?
 
 echo "*** Running teaser engine request specs"
