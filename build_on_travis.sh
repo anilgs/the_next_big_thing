@@ -6,15 +6,6 @@ bundle exec rspec spec
 result=$?
 
 
-cd engines/news_signup
-echo "*** Running news_signup engine specs"
-bundle install
-bundle exec rake db:migrate app:db:test:prepare
-rspec spec
-result+=$?
-
-
-cd ../..
 cd engines/teaser
 echo "*** Running teaser engine specs"
 source "$HOME/.rvm/scripts/rvm"
@@ -29,6 +20,16 @@ result+=$?
 
 echo "*** Running teaser engine javascript specs"
 bundle exec rake app:jasmine:ci
+result+=$?
+
+
+cd ../..
+cd engines/news_signup
+echo "*** Running news_signup engine specs"
+source "$HOME/.rvm/scripts/rvm"
+bundle install
+bundle exec rake db:migrate app:db:test:prepare
+rspec spec
 result+=$?
 
 
