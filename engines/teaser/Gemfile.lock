@@ -5,6 +5,7 @@ PATH
       annoyance
       haml-rails
       jquery-rails
+      news_signup
       rails (~> 3.2.8)
       sass-rails
 
@@ -12,6 +13,12 @@ PATH
   remote: ../../gems/annoyance
   specs:
     annoyance (0.0.1)
+
+PATH
+  remote: ../news_signup
+  specs:
+    news_signup (0.0.1)
+      rails (~> 3.2.8)
 
 GEM
   remote: http://rubygems.org/
@@ -169,6 +176,7 @@ DEPENDENCIES
   annoyance!
   capybara
   jasmine
+  news_signup!
   poltergeist
   rspec-rails
   shoulda-matchers

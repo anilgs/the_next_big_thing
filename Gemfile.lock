@@ -1,10 +1,17 @@
 PATH
+  remote: engines/news_signup
+  specs:
+    news_signup (0.0.1)
+      rails (~> 3.2.8)
+
+PATH
   remote: engines/teaser
   specs:
     teaser (0.0.1)
       annoyance
       haml-rails
       jquery-rails
+      news_signup
       rails (~> 3.2.8)
       sass-rails
 
@@ -170,6 +177,7 @@ DEPENDENCIES
   annoyance!
   capybara
   jasmine
+  news_signup!
   pg
   poltergeist
   rails

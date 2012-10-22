@@ -9,3 +9,4 @@ gem "poltergeist"
 gem "jasmine"
 
 gem "annoyance", path: "../../gems/annoyance"
+gem "news_signup", path: "../news_signup"
